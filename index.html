@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机密码生成器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>随机密码生成器</h1>
+        <div class="password-display">
+            <input type="text" id="generated-password" readonly>
+            <button id="copy-button">复制</button>
+        </div>
+        <div class="options">
+            <div class="option">
+                <label for="password-length">密码长度:</label>
+                <input type="range" id="password-length" min="8" max="32" value="16">
+                <span id="length-value">16</span>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" id="include-uppercase" checked>
+                    包含大写字母
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" id="include-lowercase" checked>
+                    包含小写字母
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" id="include-numbers" checked>
+                    包含数字
+                </label>
+            </div>
+            <div class="option">
+                <label>
+                    <input type="checkbox" id="include-special" checked>
+                    包含特殊字符
+                </label>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="generate-button">生成密码</button>
+            <button id="save-button">保存密码</button>
+            <button id="view-passwords-button">查看已保存密码</button>
+        </div>
+        <div class="password-strength">
+            <div class="strength-meter">
+                <div id="strength-bar"></div>
+            </div>
+            <span id="strength-text">密码强度: 强</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <!-- 密码备注模态对话框 -->
+    <div id="note-modal" class="modal">
+        <div class="modal-content">
+            <h3>添加密码备注</h3>
+            <p>请输入密码备注（例如：邮箱密码）:</p>
+            <input type="text" id="note-input" placeholder="输入备注...">
+            <div class="modal-buttons">
+                <button id="save-note-button">保存</button>
+                <button id="cancel-note-button">取消</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
